@@ -1,0 +1,78 @@
+# networking helpers
+alias d='dig +search +short'
+alias dx='dig +search +short -x'
+alias ldp="sudo tcpdump -nn -v -i eth0 -s 1500 -c 1 'ether proto 0x88cc'"
+alias p="ping"
+alias pigo="ping -c 1 8.8.8.8"
+alias pigw="ping -c 1 `ip r | grep default | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`"
+alias dhreset_eth="sudo dhclient -v eth0"
+alias dhcpreset_wlan="sudo dhclient -v wlan0"
+alias me="ip addr" 
+alias myip4="ip -f inet addr" 
+alias myip6="ip -f inet6 addr" 
+alias tcpdump="sudo tcpdump -l -n"
+alias nping="nmap -sP"
+alias sshlocalt='ssh -Y -p 6969 localhost'
+
+# ip route change
+function iprc() {
+    if [[ $# -ne 2 ]]; then echo "Arg 1 - gateway. Arg 2 - interface." ; return; fi
+    sudo ip route delete default
+    sudo ip route add default via $1 dev $2
+}   
+
+# General Bash helpers
+function lstop { ls -lt $1 | grep -v ^total | head -n 10; }
+if [[ `which vim-enhanced` ]]; then
+    alias vim='vim-enhanced'
+    alias vi='vim-enhanced'
+fi
+
+# GUI
+function xo() {
+        xdg-open "$@" >/dev/null 2>&1 & 
+    }
+
+# Python
+alias pip3='pip-3.3'
+
+# Android dev
+export AND_ADT=$HOME/Utilities/ADT
+export AND_SDK=$AND_ADT/sdk
+if [ -d $AND_SDK ]; then
+    alias android=$AND_SDK/tools/android
+    alias adt-eclipse=$AND_ADT/eclipse/eclipse
+fi
+alias fix-adb='sudo adb kill-server && sudo adb start-server && sudo adb devices'
+alias ash='adb shell'
+alias adev='adb devices'
+
+# Git helpers
+alias git-sub-init='git submodule update --init --recursive'
+alias gts='git status'
+alias gtd='git diff --color'
+alias gtl='git log --oneline --color --graph'
+alias gtr='git reset --soft HEAD~1'
+function gi() { curl http://www.gitignore.io/api/$@ ;}
+
+#Django helpers
+alias djm='python manage.py'
+
+# Python Virtualenv wrapper and aliases
+vew="/usr/bin/virtualenvwrapper.sh"
+if [ -f $vew ]; then
+	export WORKON_HOME=$HOME/.virtualenvs
+	source $vew
+	alias v='workon'
+	alias v.deactivate='deactivate'
+	alias v.mk='mkvirtualenv'
+	alias v.rm='rmvirtualenv'
+	alias v.switch='workon'
+	alias v.add2virtualenv='add2virtualenv'
+	alias v.cdsitepackages='cdsitepackages'
+	alias v.cd='cdvirtualenv'
+	alias v.lssitepackages='lssitepackages'
+fi
+
+# sasl2 fix
+alias pidgin-fix='export SASL_PATH=/usr/local/lib64/sasl2; pidgin &'
