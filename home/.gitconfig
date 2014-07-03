@@ -1,0 +1,7 @@
+[user]
+	name = Michael Sheinberg
+	email = m.sheiny@gmail.com
+[core]
+	pager = cat
+[color]
+	ui = true
