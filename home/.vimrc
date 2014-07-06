@@ -167,3 +167,9 @@ nmap <F8> :TagbarToggle<CR>
 "  Markdown plugin
 "-----------------
 let g:vim_markdown_folding_disabled=1
+
+
+"-----------------
+"  Airline plugin
+"-----------------
+let g:airline_powerline_fonts = 1
