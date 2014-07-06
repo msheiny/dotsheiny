@@ -153,9 +153,3 @@ nmap <F8> :TagbarToggle<CR>
 "  Markdown plugin
 "-----------------
 let g:vim_markdown_folding_disabled=1
-
-"-----------------
-"  Pathogen - enables dropping plugins in ~/.vim/bundle for easy enabling
-"-----------------
-execute pathogen#infect()
-
