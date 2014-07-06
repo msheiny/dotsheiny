@@ -22,6 +22,7 @@ Plugin 'chase/vim-ansible-yaml.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
