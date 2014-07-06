@@ -35,6 +35,16 @@ filetype plugin indent on    " required
 "------------------
 "
 
+" Relative numbering and number for 704
+if v:version > 704
+    set relativenumber 
+    set number
+elif v:version == 703
+    set relativenumber 
+else
+    set number
+endif
+
 "  Make 81 column highlighted
 highlight ColorColumn ctermbg=magenta
 set colorcolumn=81
@@ -63,10 +73,6 @@ set smartindent
 " expands tab to spaces
 set expandtab
 
- 
-" dont act as vi
-set nocompatible
- 
 " turn off the beep!
 set noerrorbells
  
@@ -128,7 +134,6 @@ set visualbell t_vb=
 set matchtime=2
  
 " print the line number in front of each line?
-set number
 nnoremap <F2> :set nonumber!<CR>
  
 " number of lines for the command area; more eliminates
