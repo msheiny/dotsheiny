@@ -14,6 +14,14 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'davidhalter/jedi-vim.git'
+Plugin 'msanders/snipmate.vim.git'
+Plugin 'majutsushi/tagbar.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'airblade/vim-gitgutter.git'
+Plugin 'kien/ctrlp.vim'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
