@@ -23,15 +23,6 @@ function iprc() {
 
 # General Bash helpers
 function lstop { ls -lt $1 | grep -v ^total | head -n 10; }
-if [[ `which vim-enhanced` ]]; then
-    alias vim='vim-enhanced'
-    alias vi='vim-enhanced'
-fi
-
-# GUI
-function xo() {
-        xdg-open "$@" >/dev/null 2>&1 & 
-    }
 
 # Python
 alias pip3='pip-3.3'
@@ -39,10 +30,6 @@ alias pip3='pip-3.3'
 # Android dev
 export AND_ADT=$HOME/Utilities/ADT
 export AND_SDK=$AND_ADT/sdk
-if [ -d $AND_SDK ]; then
-    alias android=$AND_SDK/tools/android
-    alias adt-eclipse=$AND_ADT/eclipse/eclipse
-fi
 alias fix-adb='sudo adb kill-server && sudo adb start-server && sudo adb devices'
 alias ash='adb shell'
 alias adev='adb devices'
@@ -73,6 +60,3 @@ if [ -f $vew ]; then
 	alias v.cd='cdvirtualenv'
 	alias v.lssitepackages='lssitepackages'
 fi
-
-# sasl2 fix
-alias pidgin-fix='export SASL_PATH=/usr/local/lib64/sasl2; pidgin &'
