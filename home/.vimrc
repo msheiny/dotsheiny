@@ -38,10 +38,10 @@ filetype plugin indent on    " required
 "
 
 " Relative numbering and number for 704
-if v:version > 704
+if v:version >= 704
     set relativenumber 
     set number
-elif v:version == 703
+elseif v:version == 703
     set relativenumber 
 else
     set number
