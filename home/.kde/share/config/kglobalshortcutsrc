@@ -41,9 +41,9 @@ show-on-mouse-pos=none,none,Open Klipper at Mouse Position
 
 [kmix]
 _k_friendly_name=KMix
-decrease_volume=Volume Down,Volume Down,Decrease Volume
-increase_volume=Volume Up,Volume Up,Increase Volume
-mute=Volume Mute,Volume Mute,Mute
+decrease_volume=Alt+F11,Volume Down,Decrease Volume
+increase_volume=Alt+F12,Volume Up,Increase Volume
+mute=Alt+F10,Volume Mute,Mute
 
 [krunner]
 PowerDevil=none,none,Run Command (runner "PowerDevil" only)
