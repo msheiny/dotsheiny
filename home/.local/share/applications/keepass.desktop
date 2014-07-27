@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Version=2.0
+Name=KeePass
+Icon=timevault
+Exec=/usr/bin/mono /home/msheiny/Utilities/KeePass/KeePass.exe
+Categories=Utilities
+StartupNotify=true
