@@ -119,7 +119,6 @@ set foldmethod=indent
 set foldlevel=99
 
 "spell checking
-set spell spelllang=en
 map <f5> :setlocal spell! spelllang=en_us<CR>
 
 "------------------
