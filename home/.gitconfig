@@ -3,5 +3,6 @@
 	email = m.sheiny@gmail.com
 [core]
 	pager = cat
+	editor = vim
 [color]
 	ui = true
