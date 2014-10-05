@@ -1,3 +1,10 @@
+# desktop helpers
+
+function xo() {
+    xdg-open "$1" &
+}
+
+
 # networking helpers
 alias d='dig +search +short'
 alias dx='dig +search +short -x'
