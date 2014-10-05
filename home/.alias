@@ -67,3 +67,8 @@ if [ -f $vew ]; then
 	alias v.cd='cdvirtualenv'
 	alias v.lssitepackages='lssitepackages'
 fi
+
+adk_tools="/home/msheiny/Utilities/adt-bundle"
+if [ -d "$adk_tools" ]; then
+    export PATH="$PATH:$adk_tools/sdk/tools"
+fi
