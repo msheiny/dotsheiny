@@ -6,7 +6,7 @@ function xo() {
 
 
 # networking helpers
-alias d='dig +search +short'
+alias d='dig +search +noall +answer'
 alias dx='dig +search +short -x'
 alias ldp="sudo tcpdump -nn -v -i eth0 -s 1500 -c 1 'ether proto 0x88cc'"
 alias p="ping"
@@ -20,6 +20,15 @@ alias myip6="ip -f inet6 addr"
 alias tcpdump="sudo tcpdump -l -n"
 alias nping="nmap -sP"
 alias sshlocalt='ssh -Y -p 6969 localhost'
+function sambamnt() {
+    myuid=`id | cut -d '=' -f 2 | cut -d '(' -f 1`
+    mygid=`id | cut -d '=' -f 3 | cut -d '(' -f 1`
+    mntpnt=/mnt/$1/$2
+    if [ ! -d $mntpnt ]; then
+        sudo mkdir -p $mntpnt
+    fi
+    sudo mount -t cifs -o rw,user=msheiny,uid=$myuid,gid=$mygid //$1/$2 $mntpnt
+}
 
 # ip route change
 function iprc() {
@@ -72,3 +81,5 @@ adk_tools="/home/msheiny/Utilities/adt-bundle"
 if [ -d "$adk_tools" ]; then
     export PATH="$PATH:$adk_tools/sdk/tools"
 fi
+
+
