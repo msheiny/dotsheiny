@@ -24,6 +24,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic.git'
+Plugin 'saltstack/salt-vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
