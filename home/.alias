@@ -20,6 +20,7 @@ alias myip6="ip -f inet6 addr"
 alias tcpdump="sudo tcpdump -l -n"
 alias nping="nmap -sP"
 alias sshlocalt='ssh -Y -p 6969 localhost'
+alias sshnokey='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
 function sambamnt() {
     myuid=`id | cut -d '=' -f 2 | cut -d '(' -f 1`
     mygid=`id | cut -d '=' -f 3 | cut -d '(' -f 1`
