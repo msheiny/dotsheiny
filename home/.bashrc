@@ -23,7 +23,7 @@ fi
 
 # call my aliases
 test -s ~/.alias && . ~/.alias || true
-test -s ~/Dropbox/Sync/other/alias && . ~/Dropbox/Sync/other/alias  || true
+test -s ~/.localalias && . ~/.localalias  || true
 
 # Sublime Sync
 sublime=~/Utilities/SublimeText2/sublime_text
