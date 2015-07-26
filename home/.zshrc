@@ -25,7 +25,7 @@ ZSH_THEME="simple"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 plugins=(git gem knife last-working-directory nyan pip pyenv pylint python sudo
-tmux vagrant virtualenvwrapper yum)
+tmux vagrant virtualenvwrapper yum ssh-agent django)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,5 +49,6 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # For a full list of active aliases, run `alias`.
 #
 source $HOME/.alias
+if [ -f $HOME/.otheralias ]; then source $HOME/.otheralias; fi
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
