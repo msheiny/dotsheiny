@@ -83,4 +83,5 @@ if [ -d "$adk_tools" ]; then
     export PATH="$PATH:$adk_tools/sdk/tools"
 fi
 
-
+# image manipulation
+alias estrip='exiftool -all= '
