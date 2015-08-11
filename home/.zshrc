@@ -25,7 +25,7 @@ ZSH_THEME="simple"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 plugins=(git gem knife last-working-directory nyan pip pyenv pylint python sudo
-tmux vagrant virtualenvwrapper yum ssh-agent django)
+tmux vagrant virtualenvwrapper yum ssh-agent django docker)
 
 source $ZSH/oh-my-zsh.sh
 
