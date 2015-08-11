@@ -85,3 +85,6 @@ fi
 
 # image manipulation
 alias estrip='exiftool -all= '
+
+# svn
+export SVN_EDITOR=vim
