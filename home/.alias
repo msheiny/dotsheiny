@@ -57,7 +57,7 @@ alias gts='git status'
 alias gtd='git diff --color'
 alias gtl='git log --oneline --color --graph'
 alias gtr='git reset --soft HEAD~1'
-function gi() { curl https://www.gitignore.io/api/$@ ;}
+function gi() { wget -q -O - https://www.gitignore.io/api/$@ ;}
 
 #Django helpers
 alias djm='python manage.py'
