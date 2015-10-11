@@ -11,11 +11,6 @@ PATH="/sbin:/usr/sbin:$PATH:~/bin"
 test -d ~/.local/bin/  && export PATH="~/.local/bin:$PATH"
 export MANPATH="$MANPATH:~/share/man"
 
-# Call liquid prompt PS settings
-if [ -f ~/.liquidprompt ]; then
-	source ~/.liquidprompt
-fi
-
 # steam home sound fix
 if [[ `hostname` == 'sheiny-home-linux' ]]; then
 	export SDL_AUDIODRIVER=pulseaudio
@@ -24,12 +19,6 @@ fi
 # call my aliases
 test -s ~/.alias && . ~/.alias || true
 test -s ~/.localalias && . ~/.localalias  || true
-
-# Sublime Sync
-sublime=~/Utilities/SublimeText2/sublime_text
-if [ -f "$sublime" ]; then
-	alias sublime_text=$sublime
-fi
 
 # autoenv
 if [[ -f /usr/bin/activate.sh ]]; then
