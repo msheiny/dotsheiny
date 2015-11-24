@@ -4,6 +4,14 @@ function xo() {
     xdg-open "$1" &
 }
 
+function esx_upload() {
+    if [ $# -ne 6 ]; then
+        echo "Usage:\n\tesx_upload username filename server folder dsname dcpath"
+    else
+        curl -u '$1' -v -k -T "${2}" https://${3}/folder/${4}/${2}\?dsName\=${5}\&dcPath\=${6}
+    fi
+}
+
 
 # networking helpers
 alias d='dig +search +noall +answer'
