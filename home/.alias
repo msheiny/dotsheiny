@@ -4,6 +4,10 @@ function xo() {
     xdg-open "$1" &
 }
 
+function alias_fcheck() {
+    which $2 &> /dev/null && eval "alias $1=$2"
+}
+
 function esx_upload() {
     if [ $# -ne 6 ]; then
         echo "Usage:\n\tesx_upload username filename server folder dsname dcpath"
@@ -60,6 +64,7 @@ alias ash='adb shell'
 alias adev='adb devices'
 
 # Git helpers
+alias_fcheck git hub
 alias git-sub-init='git submodule update --init --recursive'
 alias gts='git status'
 alias gtd='git diff --color'
@@ -96,3 +101,9 @@ alias estrip='exiftool -all= '
 
 # svn
 export SVN_EDITOR=vim
+
+# ansible helpers
+alias awp='ansible windows -i hosts -m win_ping'
+function awr() {
+    ansible windows -i hosts -m raw -a "$1"
+}
