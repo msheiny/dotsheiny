@@ -16,6 +16,9 @@ plugins=(git gem last-working-directory pip pyenv pylint python sudo tmux vagran
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export EDITOR=vim
 
+fpath=(~/.zsh/completions $fpath)
+autoload -U compinit && compinit
+
 source $HOME/.alias
 if [ -f $HOME/.otheralias ]; then source $HOME/.otheralias; fi
 

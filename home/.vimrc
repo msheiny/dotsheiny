@@ -50,8 +50,10 @@ else
 endif
 
 "  Make 81 column highlighted
-highlight ColorColumn ctermbg=magenta
-set colorcolumn=81
+set cursorline
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+hi Bang ctermbg=red ctermfg=black
+match Bang /\%>79v.*\%<81v/
 set tw=80
 
 " tab (character) is 4 spaces

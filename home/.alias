@@ -13,6 +13,11 @@ function resign_vbox() {
             $c_drive/msheiny.priv $c_drive/msheiny.der $(modinfo -n $mod)
         sudo modprobe $mod
     done
+
+function alias_fcheck() {
+    which $2 &> /dev/null && eval "alias $1=$2"
+}
+
 }
 
 # ip route change
@@ -51,6 +56,7 @@ alias ash='adb shell'
 alias adev='adb devices'
 
 # Git helpers
+alias_fcheck git hub
 alias git-sub-init='git submodule update --init --recursive'
 alias gts='git status'
 alias gtd='git diff --color'
@@ -90,3 +96,9 @@ export SVN_EDITOR=vim
 
 # xbox controller
 alias xboxctlr="sudo xboxdrv --mimic-xpad --detach-kernel-driver --silent &"
+
+# ansible helpers
+alias awp='ansible windows -i hosts -m win_ping'
+function awr() {
+    ansible windows -i hosts -m raw -a "$1"
+}
