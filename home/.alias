@@ -13,12 +13,12 @@ function resign_vbox() {
             $c_drive/msheiny.priv $c_drive/msheiny.der $(modinfo -n $mod)
         sudo modprobe $mod
     done
+}
 
 function alias_fcheck() {
     which $2 &> /dev/null && eval "alias $1=$2"
 }
 
-}
 
 # ip route change
 function iprc() {
@@ -62,13 +62,21 @@ alias gts='git status'
 alias gtd='git diff --color'
 alias gtl='git log --oneline --color --graph'
 alias gtr='git reset --soft HEAD~1'
+alias gtru="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(committerdate:relative) %09 %(objectname:short) %09 %(refname:short) %09 %(authorname)'"
 function gi() { wget -q -O - https://www.gitignore.io/api/$@ ;}
+
+# configure local Ruby gem support
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+    export GEM_HOME="$(ruby -rubygems -e 'puts Gem.user_dir')"
+fi
 
 #Django helpers
 alias djm='python manage.py'
 
 # Python Virtualenv wrapper and aliases
 vew="/usr/bin/virtualenvwrapper.sh"
+vew="/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
 if [ -f $vew ]; then
 	export WORKON_HOME=$HOME/.virtualenvs
 	source $vew
@@ -101,4 +109,16 @@ alias xboxctlr="sudo xboxdrv --mimic-xpad --detach-kernel-driver --silent &"
 alias awp='ansible windows -i hosts -m win_ping'
 function awr() {
     ansible windows -i hosts -m raw -a "$1"
+}
+
+# gpg
+alias gpg="gpg2"
+
+vagrant-update-all-boxes() {
+# Update all hosted boxes. Omit boxes with version ', 0', since that
+# likely indicates a manually added box, that can't be polled for updates.
+    vagrant box list | grep -vP ', 0\)$' \
+        | awk '{print $1}' \
+        | sort | uniq \
+        | xargs -n1 vagrant box update --box
 }
