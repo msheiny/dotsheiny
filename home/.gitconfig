@@ -1,8 +1,10 @@
 [user]
-	name = Michael Sheinberg
-	email = m.sheiny@gmail.com
+    name = Michael Sheinberg
+    email = m.sheiny@gmail.com
 [core]
-	pager = cat
 	editor = vim
 [color]
-	ui = true
+    ui = true
+[alias]
+    co = checkout
+    cl = clone
