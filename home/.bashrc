@@ -7,8 +7,8 @@ fi
 export EDITOR=/usr/bin/vim
 
 # Add local home to path
-PATH="/sbin:/usr/sbin:$PATH:~/bin"
-test -d ~/.local/bin/  && export PATH="~/.local/bin:$PATH"
+export PATH="/sbin:/usr/sbin:$PATH"
+test -d ~/bin/  && export PATH="$(realpath ~/bin):$PATH"
 export MANPATH="$MANPATH:~/share/man"
 
 # steam home sound fix

@@ -16,10 +16,20 @@ plugins=(git gem last-working-directory pip pyenv pylint python sudo tmux vagran
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export EDITOR=vim
 
+# Add local home to path
+export PATH="/sbin:/usr/sbin:$PATH"
+test -d ~/bin/  && export PATH="$(realpath ~/bin):$PATH"
+test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
+
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
-source $HOME/.alias
-if [ -f $HOME/.otheralias ]; then source $HOME/.otheralias; fi
+# call my aliases
+test -s ~/.alias && source ~/.alias || true
+test -s ~/.localalias && source ~/.localalias  || true
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+# Check for homeshick and source
+if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
+    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fi
+
