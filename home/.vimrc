@@ -18,13 +18,14 @@ Plugin 'davidhalter/jedi-vim.git'
 Plugin 'msanders/snipmate.vim.git'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'chase/vim-ansible-yaml.git'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'saltstack/salt-vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -177,3 +178,12 @@ let g:vim_markdown_folding_disabled=1
 "  Airline plugin
 "-----------------
 let g:airline_powerline_fonts = 1
+
+
+"----------------------
+"  vim-colors-solarized
+"----------------------
+syntax enable
+set background=dark
+colorscheme solarized
+set t_Co=16
