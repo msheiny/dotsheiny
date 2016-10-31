@@ -9,6 +9,17 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOQUIT=true
 ZSH_TMUX_AUTOCONNECT=false
 
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+
+# call my aliases
+test -s ~/.alias && source ~/.alias || true
+test -s ~/.localalias && source ~/.localalias  || true
+
+# Check for homeshick and source
+if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
+    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+fi
 
 # Pull in ohmyzsh and plugin settings
 plugins=(git gem last-working-directory pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent docker tmux)
@@ -25,13 +36,3 @@ test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
 
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
-
-# call my aliases
-test -s ~/.alias && source ~/.alias || true
-test -s ~/.localalias && source ~/.localalias  || true
-
-# Check for homeshick and source
-if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
-    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fi
-
