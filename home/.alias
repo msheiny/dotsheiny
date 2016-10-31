@@ -112,6 +112,7 @@ alias awp='ansible windows -i hosts -m win_ping'
 function awr() {
     ansible windows -i hosts -m raw -a "$1"
 }
+alias apv='ansible-playbook --diff -vv'
 
 # gpg
 alias gpg="gpg2"
