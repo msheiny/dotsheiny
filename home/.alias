@@ -29,6 +29,7 @@ function iprc() {
 
 # General Bash helpers
 function lstop { ls -lt $1 | grep -v ^total | head -n 10; }
+alias clip="xsel -i -b"
 
 # networking helpers ###############################
 alias d='dig +search +noall +answer'
