@@ -8,3 +8,5 @@
 [alias]
     co = checkout
     cl = clone
+[pull]
+    rebase = true
