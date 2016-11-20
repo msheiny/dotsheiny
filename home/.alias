@@ -43,6 +43,7 @@ alias dhcpreset_wlan="sudo dhclient -v wlan0"
 alias me="ip addr" 
 alias myip4="ip -f inet addr" 
 alias myip6="ip -f inet6 addr" 
+alias whatsmyip="curl ifconfig.co"
 alias tcpdump="sudo tcpdump -l -n"
 alias nping="nmap -sP"
 alias sshlocalt='ssh -Y -p 6969 localhost'
