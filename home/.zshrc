@@ -46,3 +46,6 @@ fi
 
 # Ansible Related
 export ANSIBLE_NOCOWS=1
+
+# External sources
+source ~/.zsh/sourcin
