@@ -18,7 +18,7 @@ if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
 fi
 
 # Pull in ohmyzsh and plugin settings
-plugins=(git gem last-working-directory pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent docker tmux)
+plugins=(aws git gem last-working-directory pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent docker tmux)
 source $ZSH/oh-my-zsh.sh
 
 # call my aliases
@@ -33,6 +33,16 @@ export EDITOR=vim
 export PATH="/sbin:/usr/sbin:$PATH"
 test -d ~/bin/  && export PATH="$(realpath ~/bin):$PATH"
 test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
+test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
+test -d ~/.gem/ruby/2.3.0/bin && export PATH="~/.gem/ruby/2.3.0/bin:$PATH"
+
 
 fpath=(~/.zsh/completions $fpath)
-autoload -U compinit && compinit
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+if [ -f /etc/bash_completion.d/docker-machine ]; then
+    source /etc/bash_completion.d/docker-machine
+fi
+
+# Ansible Related
+export ANSIBLE_NOCOWS=1
