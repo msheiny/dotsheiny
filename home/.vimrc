@@ -26,6 +26,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic.git'
 Plugin 'saltstack/salt-vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'robbles/logstash.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -156,6 +157,10 @@ set hlsearch
 " set toggle paste 
 set pastetoggle=<leader>p
 
+" set shortcut to disable line wrap
+"nmap \w :set textwidth=0 wrapmargin=0<CR>
+noremap <C-n> :setl sr! fo<C-R>=strpart("-+",&sr,1)<CR>=tc<CR>
+
 "-----------------
 "  NERD plugin
 "-----------------
@@ -187,3 +192,24 @@ syntax enable
 set background=dark
 colorscheme solarized
 set t_Co=16
+
+"----------------------
+"  pep8
+"----------------------
+"autocmd BufWritePost *.py call Flake8()
+
+" Certain filetypes set width to 2 spaces
+function SetTwoSpaces()
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
+
+autocmd Filetype logstash call SetTwoSpaces()
+autocmd Filetype yaml call SetTwoSpaces()
+
+
+"----------------------
+"  riemann
+"----------------------
+autocmd BufReadPost riemann.config set syntax=clojure
