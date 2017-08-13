@@ -31,6 +31,13 @@ function iprc() {
 function lstop { ls -lt $1 | grep -v ^total | head -n 10; }
 alias clip="xsel -i -b"
 
+# ssh agent
+function sshinit() {
+    for key in `egrep -l -r 'ENCRYPTED' ~/.ssh/`; do
+        ssh-add $key
+    done
+}
+
 # networking helpers ###############################
 alias d='dig +search +noall +answer'
 alias dx='dig +search +short -x'
@@ -47,7 +54,8 @@ alias whatsmyip="curl ifconfig.co"
 alias tcpdump="sudo tcpdump -l -n"
 alias nping="nmap -sP"
 alias sshlocalt='ssh -Y -p 6969 localhost'
-alias sshnokey='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias sshnokey='ssh -o PubkeyAuthentication=no -o PasswordAuthentication=yes'
+alias sshnohostcheck='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o loglevel=ERROR'
 
 
 # Android dev
