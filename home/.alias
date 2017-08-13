@@ -135,3 +135,8 @@ vagrant-update-all-boxes() {
         | sort | uniq \
         | xargs -n1 vagrant box update --box
 }
+
+
+if [ -f ~/.virtualenvs/diceware/bin/diceware ]; then
+    alias diceware=~/.virtualenvs/diceware/bin/diceware
+fi
