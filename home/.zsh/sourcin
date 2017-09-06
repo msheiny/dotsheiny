@@ -5,3 +5,7 @@ function src_file {
 }
 
 src_file /usr/share/zsh/site-functions/aws_zsh_completer.sh
+src_file "$HOME/.homesick/repos/homeshick/homeshick.sh"
+src_file "$HOME/.alias"
+src_file "$HOME/.localalias"
+src_file /etc/bash_completion.d/docker-machine

@@ -12,18 +12,10 @@ ZSH_TMUX_AUTOCONNECT=false
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 
-# Check for homeshick and source
-if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
-    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-fi
-
 # Pull in ohmyzsh and plugin settings
-plugins=(aws git gem last-working-directory pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent docker tmux)
-source $ZSH/oh-my-zsh.sh
+plugins=(git gem last-working-directory pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent docker tmux)
 
-# call my aliases
-test -s ~/.alias && source ~/.alias || true
-test -s ~/.localalias && source ~/.localalias  || true
+source $ZSH/oh-my-zsh.sh
 
 # General Preferences
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
@@ -40,12 +32,9 @@ test -d ~/.gem/ruby/2.3.0/bin && export PATH="~/.gem/ruby/2.3.0/bin:$PATH"
 fpath=(~/.zsh/completions $fpath)
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-if [ -f /etc/bash_completion.d/docker-machine ]; then
-    source /etc/bash_completion.d/docker-machine
-fi
 
 # Ansible Related
 export ANSIBLE_NOCOWS=1
 
-# External sources
+# Move external sourcin' logic outside
 source ~/.zsh/sourcin
