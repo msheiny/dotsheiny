@@ -87,11 +87,13 @@ fi
 alias djm='python manage.py'
 
 # Python Virtualenv wrapper and aliases
-vew="/usr/bin/virtualenvwrapper.sh"
-vew="/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
-if [ -f $vew ]; then
+vew_fedora="/usr/bin/virtualenvwrapper.sh"
+vew_debian="/usr/share/virtualenvwrapper/virtualenvwrapper.sh"
+
+if [ -e ${vew_fedora} -o -e ${vew_debian} ] ; then
 	export WORKON_HOME=$HOME/.virtualenvs
-	source $vew
+	test -e $vew_fedora && source $vew_fedora
+	test -e $vew_debian && source $vew_debian
 	alias v='workon'
 	alias v.deactivate='deactivate'
 	alias v.mk='mkvirtualenv'
