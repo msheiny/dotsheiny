@@ -9,3 +9,11 @@ src_file "$HOME/.homesick/repos/homeshick/homeshick.sh"
 src_file "$HOME/.alias"
 src_file "$HOME/.localalias"
 src_file /etc/bash_completion.d/docker-machine
+
+BASH_COMPLETE_DIR=$HOME/.bash_completions
+
+if [ -d "$BASH_COMPLETE_DIR" ]; then
+    for file in `ls "$BASH_COMPLETE_DIR"`; do
+        source "$BASH_COMPLETE_DIR/$file"
+    done
+fi
