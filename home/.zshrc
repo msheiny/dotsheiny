@@ -21,6 +21,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 export EDITOR=vim
 
+# NTFY settings
+export AUTO_NTFY_DONE_LONGER_THAN=-L60
+export AUTO_NTFY_DONE_IGNORE="vim screen tmux"
+
 # Add local home to path
 export PATH="/sbin:/usr/sbin:$PATH"
 test -d ~/bin/  && export PATH="$(realpath ~/bin):$PATH"
