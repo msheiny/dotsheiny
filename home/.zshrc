@@ -23,7 +23,7 @@ export EDITOR=vim
 
 # NTFY settings
 export AUTO_NTFY_DONE_LONGER_THAN=-L60
-export AUTO_NTFY_DONE_IGNORE="vim screen tmux"
+export AUTO_NTFY_DONE_IGNORE="vim vi screen tmux gc htop tail find"
 
 # Add local home to path
 export PATH="/sbin:/usr/sbin:$PATH"

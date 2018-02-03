@@ -9,7 +9,6 @@ src_file "$HOME/.homesick/repos/homeshick/homeshick.sh"
 src_file "$HOME/.alias"
 src_file "$HOME/.localalias"
 src_file /etc/bash_completion.d/docker-machine
-src_file "$HOME/.local/share/ntfy/auto-ntfy-done.sh"
 
 BASH_COMPLETE_DIR=$HOME/.bash_completions
 
