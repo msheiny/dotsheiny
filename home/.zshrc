@@ -27,7 +27,7 @@ export AUTO_NTFY_DONE_IGNORE="vim vi screen tmux gc htop tail find"
 
 # Add local home to path
 export PATH="/sbin:/usr/sbin:$PATH"
-test -d ~/bin/  && export PATH="$(realpath ~/bin):$PATH"
+test -d ~/.local/bin/  && export PATH="$(realpath ~/.local/bin):$PATH"
 test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
 test -d ~/share/man && export MANPATH="$MANPATH:~/share/man"
 test -d ~/.gem/ruby/2.3.0/bin && export PATH="~/.gem/ruby/2.3.0/bin:$PATH"
