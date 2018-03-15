@@ -140,3 +140,7 @@ vagrant-update-all-boxes() {
 if [ -f ~/.virtualenvs/diceware/bin/diceware ]; then
     alias diceware=~/.virtualenvs/diceware/bin/diceware
 fi
+
+if [ -f `which doctl` ]; then
+    alias do-ssh='doctl compute ssh'
+fi
