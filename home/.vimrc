@@ -28,6 +28,7 @@ Plugin 'saltstack/salt-vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'robbles/logstash.vim'
 Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
