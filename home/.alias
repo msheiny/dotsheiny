@@ -144,3 +144,10 @@ fi
 if [ -f `which doctl` ]; then
     alias do-ssh='doctl compute ssh'
 fi
+
+
+function libvirt-disable-aa() {
+    sudo aa-complain /usr/sbin/libvirtd
+    sudo service apparmor teardown
+    sudo service apparmor start
+}
