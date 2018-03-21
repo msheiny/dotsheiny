@@ -10,5 +10,6 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
         "editor.autoIndent": false
-    }
+    },
+    "trailing-spaces.highlightCurrentLine": false,
 }
