@@ -42,3 +42,6 @@ export ANSIBLE_NOCOWS=1
 
 # Move external sourcin' logic outside
 source ~/.zsh/sourcin
+
+# Direnv hook
+which direnv 2>&1 > /dev/null && eval "$(direnv hook zsh)"
