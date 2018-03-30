@@ -52,3 +52,5 @@ if [ -f /usr/lib/go-1.8/bin/go ]; then
     export PATH="/usr/lib/go-1.8/bin:$PATH:/home/mike/.go/bin"
     export GOPATH="/home/mike/.go"
 fi
+
+hash terraform 2> /dev/null && complete -o nospace -C /usr/bin/terraform terraform
