@@ -40,9 +40,6 @@ autoload -U +X bashcompinit && bashcompinit
 # Ansible Related
 export ANSIBLE_NOCOWS=1
 
-# Move external sourcin' logic outside
-source ~/.zsh/sourcin
-
 # Direnv hook
 which direnv 2>&1 > /dev/null && eval "$(direnv hook zsh)"
 
@@ -53,4 +50,24 @@ if [ -f /usr/lib/go-1.8/bin/go ]; then
     export GOPATH="/home/mike/.go"
 fi
 
+# Lets wire up tab completion scripts
+function src_file {
+    test -f "$1" && source "$1"
+}
+
+src_file "$HOME/.homesick/repos/homeshick/homeshick.sh"
+src_file "$HOME/.alias"
+src_file "$HOME/.localalias"
+#src_file /etc/bash_completion.d/docker-machine
+
+BASH_COMPLETE_DIR=$HOME/.bash_completions
+
+if [ -d "$BASH_COMPLETE_DIR" ]; then
+    for file in `ls "$BASH_COMPLETE_DIR"`; do
+        source "$BASH_COMPLETE_DIR/$file"
+    done
+fi
 hash terraform 2> /dev/null && complete -o nospace -C /usr/bin/terraform terraform
+
+# gcloud-sdk completion didnt work until I added it to the end :shrug:
+src_file "/usr/share/google-cloud-sdk/completion.zsh.inc"
