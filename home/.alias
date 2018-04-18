@@ -141,10 +141,7 @@ if [ -f ~/.virtualenvs/diceware/bin/diceware ]; then
     alias diceware=~/.virtualenvs/diceware/bin/diceware
 fi
 
-if [ -f `which doctl` ]; then
-    alias do-ssh='doctl compute ssh'
-fi
-
+hash doctl 2> /dev/null && alias do-ssh='doctl compute ssh'
 
 function libvirt-disable-aa() {
     sudo aa-complain /usr/sbin/libvirtd
