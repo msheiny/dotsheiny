@@ -41,7 +41,7 @@ autoload -U +X bashcompinit && bashcompinit
 export ANSIBLE_NOCOWS=1
 
 # Direnv hook
-which direnv 2>&1 > /dev/null && eval "$(direnv hook zsh)"
+which direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 # GO
 if [ -f /usr/lib/go-1.8/bin/go ]; then
