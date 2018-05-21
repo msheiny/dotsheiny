@@ -144,6 +144,8 @@ fi
 
 hash doctl 2> /dev/null && alias do-ssh='doctl compute ssh'
 
+hash gcloud 2> /dev/null && alias gce-ssh='gcloud compute ssh'
+
 function libvirt-disable-aa() {
     sudo aa-complain /usr/sbin/libvirtd
     sudo service apparmor teardown
