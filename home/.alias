@@ -128,7 +128,7 @@ alias apv='ansible-playbook --diff -vv'
 
 # gpg
 alias gpg="gpg2"
-export SOPS_GPG_EXEC=gpg2
+export SOPS_GPG_EXEC=$(which gpg2)
 
 vagrant-update-all-boxes() {
 # Update all hosted boxes. Omit boxes with version ', 0', since that
