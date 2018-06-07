@@ -30,5 +30,7 @@
     "files.associations": {
         "**/docker/*Dockerfile": "dockerfile"
     },
-    "gitlens.historyExplorer.enabled": true
+    "gitlens.historyExplorer.enabled": true,
+    "workbench.editor.showTabs": true,
+    "workbench.startupEditor": "newUntitledFile"
 }
