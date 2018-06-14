@@ -28,7 +28,9 @@
     },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
-        "**/docker/*Dockerfile": "dockerfile"
+        "**/docker/*Dockerfile": "dockerfile",
+        "**/group_vars/**": "yaml",
+        "**/host_vars/**": "yaml"
     },
     "gitlens.historyExplorer.enabled": true,
     "workbench.editor.showTabs": true,
