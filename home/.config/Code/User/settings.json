@@ -34,5 +34,6 @@
     },
     "gitlens.historyExplorer.enabled": true,
     "workbench.editor.showTabs": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.statusBar.feedback.visible": false
 }
