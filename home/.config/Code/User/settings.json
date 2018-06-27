@@ -30,7 +30,8 @@
     "files.associations": {
         "**/docker/*Dockerfile": "dockerfile",
         "**/group_vars/**": "yaml",
-        "**/host_vars/**": "yaml"
+        "**/host_vars/**": "yaml",
+        ".envrc": "shellscript"
     },
     "gitlens.historyExplorer.enabled": true,
     "workbench.editor.showTabs": true,
