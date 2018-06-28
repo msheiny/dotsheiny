@@ -36,5 +36,6 @@
     "gitlens.historyExplorer.enabled": true,
     "workbench.editor.showTabs": true,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.statusBar.feedback.visible": false
+    "workbench.statusBar.feedback.visible": false,
+    "window.menuBarVisibility": "toggle"
 }
