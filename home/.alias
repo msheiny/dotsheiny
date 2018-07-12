@@ -73,8 +73,8 @@ alias gtr='git reset --soft HEAD~1'
 alias gtru="git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format='%(committerdate:relative) %09 %(objectname:short) %09 %(refname:short) %09 %(authorname)'"
 alias gwt='git worktree'
 alias gwtl='git worktree list'
-alias git_master_compare='git log -p master..HEAD'
-alias git_dev_compare='git log -p develop..HEAD'
+alias git_compare_master='git log -p origin/master..HEAD'
+alias git_compare_dev='git log -p origin/develop..HEAD'
 function gi() { wget -q -O - https://www.gitignore.io/api/$@ ;}
 
 # configure local Ruby gem support
