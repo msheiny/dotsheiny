@@ -37,5 +37,6 @@
     "workbench.editor.showTabs": true,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "window.titleBarStyle": "custom"
 }
