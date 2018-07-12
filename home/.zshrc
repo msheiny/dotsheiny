@@ -44,7 +44,11 @@ export ANSIBLE_NOCOWS=1
 which direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 # GO
-if [ -f /usr/lib/go-1.8/bin/go ]; then
+if [ -f /usr/lib/go-1.10/bin/go ]; then
+    mkdir ~/.go 2> /dev/null || true
+    export PATH="/usr/lib/go-1.10/bin:$PATH:/home/mike/.go/bin"
+    export GOPATH="/home/mike/.go"
+elif [ -f /usr/lib/go-1.8/bin/go ]; then
     mkdir ~/.go 2> /dev/null || true
     export PATH="/usr/lib/go-1.8/bin:$PATH:/home/mike/.go/bin"
     export GOPATH="/home/mike/.go"
