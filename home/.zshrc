@@ -80,3 +80,6 @@ src_file "/usr/share/google-cloud-sdk/completion.zsh.inc"
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+# AWS Vault
+export AWS_VAULT_BACKEND=secret-service
