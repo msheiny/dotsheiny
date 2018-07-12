@@ -75,3 +75,8 @@ hash terraform 2> /dev/null && complete -o nospace -C /usr/bin/terraform terrafo
 
 # gcloud-sdk completion didnt work until I added it to the end :shrug:
 src_file "/usr/share/google-cloud-sdk/completion.zsh.inc"
+
+# kubectl
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
