@@ -83,3 +83,7 @@ fi
 
 # AWS Vault
 export AWS_VAULT_BACKEND=secret-service
+
+# Debian packaging
+export DEBEMAIL="mike@freedom.press"
+export DEBFULLNAME="Michael Sheinberg"
