@@ -38,5 +38,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.statusBar.feedback.visible": false,
     "window.menuBarVisibility": "toggle",
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "breadcrumbs.enabled": true,
+    "editor.formatOnSave": true,
 }
