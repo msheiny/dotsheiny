@@ -42,4 +42,6 @@
     "window.titleBarStyle": "custom",
     "breadcrumbs.enabled": true,
     "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
+    "vim.startInInsertMode": true,
 }
