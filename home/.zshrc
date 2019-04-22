@@ -13,7 +13,7 @@ ZSH_TMUX_AUTOCONNECT=false
 export WORKON_HOME=$HOME/.virtualenvs
 
 # Pull in ohmyzsh and plugin settings
-plugins=(git pip pyenv pylint python sudo tmux vagrant virtualenvwrapper dnf ssh-agent)
+plugins=(git pip pyenv pylint python tmux vagrant dnf ssh-agent gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
