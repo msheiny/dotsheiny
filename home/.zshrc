@@ -67,10 +67,14 @@ if [ -d "$BASH_COMPLETE_DIR" ]; then
         source "$BASH_COMPLETE_DIR/$file"
     done
 fi
-hash terraform 2> /dev/null && complete -o nospace -C /usr/bin/terraform terraform
+hash terraform 2> /dev/null && complete -o nospace -C `which terraform` terraform
 
 # gcloud-sdk completion didnt work until I added it to the end :shrug:
-src_file "/usr/share/google-cloud-sdk/completion.zsh.inc"
+GCLOUD_SDK="${HOME}/google-cloud-sdk"
+if [ -d "${GCLOUD_SDK}" ]; then
+    src_file "${GCLOUD_SDK}/path.zsh.inc"
+    src_file "${GCLOUD_SDK}/completion.zsh.inc"
+fi
 
 # kubectl
 if [ $commands[kubectl] ]; then
