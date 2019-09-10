@@ -44,7 +44,10 @@ alias dx='dig +search +short -x'
 alias lldp_sniff="sudo tcpdump -nn -v -i eth0 -s 1500 -c 1 'ether proto 0x88cc'"
 alias p="ping"
 alias pigo="ping -c 1 8.8.8.8"
-alias pigw="ping `ip r show default | awk '/default/ {print $3}'`"
+function pigw() {
+    GW=$(ip r show default | awk '/default/ {print $3}')
+    ping $GW
+}
 alias dhreset_eth="sudo dhclient -v eth0"
 alias dhcpreset_wlan="sudo dhclient -v wlan0"
 alias whatsmyip="curl https://v4.ifconfig.co"
@@ -123,7 +126,7 @@ function awr() {
 alias apv='ansible-playbook --diff -vv'
 
 # gpg
-alias gpg="gpg2"
+alias_fcheck gpg gpg2
 export SOPS_GPG_EXEC=$(which gpg2)
 
 vagrant-update-all-boxes() {
